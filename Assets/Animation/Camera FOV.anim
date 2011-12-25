@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Camera FOV
+  serializedVersion: 3
+  m_Compressed: 0
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0.000000
+        value: 35.000000
+        inSlope: 0.000000
+        outSlope: 0.000000
+        tangentMode: 0
+      - time: 10.733334
+        value: 50.000000
+        inSlope: 0.000000
+        outSlope: 0.000000
+        tangentMode: 0
+      - time: 23.450001
+        value: 35.000000
+        inSlope: 0.000000
+        outSlope: 0.000000
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: field of view
+    path: 
+    classID: 20
+    script: {fileID: 0}
+  m_SampleRate: 60.000000
+  m_WrapMode: 2
+  m_Bounds:
+    m_Center: {x: 0.000000, y: 0.000000, z: 0.000000}
+    m_Extent: {x: 0.000000, y: 0.000000, z: 0.000000}
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0.000000
+        value: 35.000000
+        inSlope: 0.000000
+        outSlope: 0.000000
+        tangentMode: 0
+      - time: 10.733334
+        value: 50.000000
+        inSlope: 0.000000
+        outSlope: 0.000000
+        tangentMode: 0
+      - time: 23.450001
+        value: 35.000000
+        inSlope: 0.000000
+        outSlope: 0.000000
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: field of view
+    path: 
+    classID: 20
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_Events: []

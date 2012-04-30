@@ -1,13 +1,8 @@
 #pragma strict
 
-static var nightMode : boolean;
+static var shade : boolean;
+static var mute : boolean;
 
 function Awake() {
     Application.targetFrameRate = 60.0;
-}
-
-function Update() {
-    if (Input.GetButtonDown("Fire1")) {
-        nightMode = !nightMode;
-    }
 }

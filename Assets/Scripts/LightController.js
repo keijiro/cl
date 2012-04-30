@@ -7,5 +7,5 @@ function Start() {
 }
 
 function Update() {
-    light.intensity = intensity * (Config.nightMode ? 0.1 : 1.0);
+    light.intensity = intensity * (Config.shade ? 0.1 : 1.0);
 }

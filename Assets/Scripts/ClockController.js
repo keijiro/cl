@@ -39,7 +39,7 @@ function Update() {
         numbers[4].SendMessage("SetNumber", time.Second / 10);
         numbers[5].SendMessage("SetNumber", time.Second % 10);
 
-        if (!Config.nightMode) {
+        if (!Config.mute) {
             var beepEnabled = PlayerPrefs.GetInt("hour_beep", 1);
             var tickEnabled = PlayerPrefs.GetInt("second_tick", 1);
 

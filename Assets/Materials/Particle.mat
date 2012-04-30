@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Blob
-  m_Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Particle
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -15,12 +15,12 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 300c1e2ff1e8045d2a70737eb666fd15, type: 1}
-          m_Scale: {x: 1.000000, y: 1.000000}
-          m_Offset: {x: 0.000000, y: 0.000000}
+          m_Texture: {fileID: 2800000, guid: f8cf581afe9c947799bf0ae066f2ae5b, type: 1}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1.000000, g: 1.000000, b: 1.000000, a: 1.000000}
+        second: {r: 1, g: 1, b: 1, a: 1}

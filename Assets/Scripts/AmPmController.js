@@ -10,5 +10,5 @@ function SetAmPm(pmFlag : boolean) {
         GetComponent.<MeshFilter>().mesh = pmFlag ? pmMesh : amMesh;
         isPm = pmFlag;
     }
-    renderer.enabled = PlayerPrefs.GetInt("two_four_hour", 0) == 0;
+    renderer.enabled = Config.ampm;
 }

@@ -20,7 +20,7 @@ function Start() {
 }
 
 function Update () {
-    var delta = Mathf.Exp(-1.0 * Time.deltaTime);
+    var delta = Mathf.Exp(-0.75 * Time.deltaTime);
     currentAmbientColor = Color.Lerp(ambientColors[Config.theme], currentAmbientColor, delta);
     currentBgColor = Color.Lerp(bgColors[Config.theme], currentBgColor, delta);
     

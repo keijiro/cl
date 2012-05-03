@@ -2401,6 +2401,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1503511851}
   - 114: {fileID: 1503511852}
+  - 111: {fileID: 1503511853}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -2430,8 +2431,42 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 641a9f4adcdc144e6ac07b2a707fe4b1, type: 1}
   m_Name: 
-  skin: {fileID: 11400000, guid: 96ad99aa6b2de4b5681304a9c2df31e9, type: 2}
+  skins:
+  - {fileID: 11400000, guid: 96ad99aa6b2de4b5681304a9c2df31e9, type: 2}
+  - {fileID: 11400000, guid: a7643b28657134c0f994a5dd318e05ed, type: 2}
   baseColor: {r: .641791046, g: .641791046, b: .641791046, a: 1}
+  imgsAmPmButton:
+  - {fileID: 2800000, guid: 5dacf7ebf5d514a89874b3a51f5fb5e4, type: 1}
+  - {fileID: 2800000, guid: 34b5718fb2f3742f5964eb5da3731039, type: 1}
+  imgsThemeButton:
+  - {fileID: 2800000, guid: 7da7ec9cad8e4426b9b1cb89678680a7, type: 1}
+  - {fileID: 2800000, guid: fe004d07f2a544bf59ec0df37e8a0130, type: 1}
+  imgsLightButton:
+  - {fileID: 2800000, guid: 96964dc0125c0458bbb5c6f94fdbc4d4, type: 1}
+  - {fileID: 2800000, guid: 1e00c1d6f9a7949538d7de66c1e55bfa, type: 1}
+  imgsAudioButton:
+  - {fileID: 2800000, guid: 90df7412eab2046e1bd652044be11c15, type: 1}
+  - {fileID: 2800000, guid: e0f18cb456b1f4fd08064f54906d4130, type: 1}
+  guiPosition: 0
+--- !u!111 &1503511853
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503511850}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: a4303230f434346f7aa8038089d12f65, type: 2}
+  - {fileID: 7400000, guid: 56af780c846384148b96fe72f9954e7f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+  m_UserAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!1 &1569017447
 GameObject:
   m_ObjectHideFlags: 0

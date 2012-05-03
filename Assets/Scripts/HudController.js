@@ -1,12 +1,22 @@
 #pragma strict
 
-var skin : GUISkin;
+var skins : GUISkin[];
 var baseColor : Color;
+var imgsAmPmButton : Texture2D[];
+var imgsThemeButton : Texture2D[];
+var imgsLightButton : Texture2D[];
+var imgsAudioButton : Texture2D[];
+
+@HideInInspector
+var guiPosition : float;
 
 private var clockController : ClockController;
 private var lightController : LightController;
+
+private var resolution : int;
+private var guiHeight : int;
+
 private var dateString : String;
-private var position : float;
 
 private static var dowNames = [
     "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
@@ -16,53 +26,60 @@ private static var monthNames = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
 
+function SetDate(month : int, day : int, dayOfWeek: int) {
+    dateString = dowNames[dayOfWeek] + " " + day + " " + monthNames[month - 1];
+}
+
 function Awake() {
     clockController = GameObject.Find("Clock").GetComponent.<ClockController>();
     lightController = GameObject.Find("Light").GetComponent.<LightController>();
 }
 
-function SetDate(month : int, day : int, dayOfWeek: int) {
-    dateString = dowNames[dayOfWeek] + " " + day + " " + monthNames[month - 1];
+function Start() {
+    resolution = Screen.dpi > 200 ? 1 : 0;
+    guiHeight = resolution == 1 ? 80 : 40;
+    guiPosition = Config.hud ? 1.0 : 0.0;
 }
 
 function Update() {
-    if (Input.GetMouseButtonDown(0) && Input.mousePosition.y > 1.5 * 40) {
+    if (!animation.isPlaying && Input.GetMouseButtonDown(0) && Input.mousePosition.y > guiHeight) {
         Config.hud = !Config.hud;
+        animation.Play(Config.hud ? "HUD On" : "HUD Off");
     }
-    
-    var target = Config.hud ? 1.0 : 0.0;
-    position = target - (target - position) * Mathf.Exp(-15.0 * Time.deltaTime); 
 }
 
 function OnGUI() {
     var sw = Screen.width;
     var sh = Screen.height;
     
-    GUI.skin = skin;
-    GUILayout.BeginArea(Rect(8, sh - position * 40, sw - 12, 40));
+    GUI.skin = skins[resolution];
+    GUI.color = baseColor;
+    
+    GUILayout.BeginArea(Rect(8, sh - guiPosition * guiHeight, sw - 12, guiHeight - 4));
+    GUILayout.BeginVertical();
+    GUILayout.FlexibleSpace();
     GUILayout.BeginHorizontal();
     
-    GUI.color = baseColor;
     GUILayout.Label(dateString);
-    
     GUILayout.FlexibleSpace();
     
-    if (GUILayout.Button("", "ampm switch")) {
+    if (GUILayout.Button(imgsAmPmButton[resolution])) {
         Config.ampm = !Config.ampm;
         clockController.UpdateDisplay();
     }
     
-    GUILayout.Button("", "theme switch");
+    GUILayout.Button(imgsThemeButton[resolution]);
     
-    if (GUILayout.Button("", "light switch")) {
+    if (GUILayout.Button(imgsLightButton[resolution])) {
         lightController.SwitchBrightness();
     }
     
     GUI.color = baseColor * (Config.mute ? 0.5 : 1.0);
-    if (GUILayout.Button("", "audio switch")) {
+    if (GUILayout.Button(imgsAudioButton[resolution])) {
         Config.mute = !Config.mute;
     }
     
     GUILayout.EndHorizontal();
+    GUILayout.EndVertical();
     GUILayout.EndArea();
 }

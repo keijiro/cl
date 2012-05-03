@@ -3,7 +3,8 @@
 var skin : GUISkin;
 var baseColor : Color;
 
-private var clock : ClockController;
+private var clockController : ClockController;
+private var lightController : LightController;
 private var dateString : String;
 private var position : float;
 
@@ -16,7 +17,8 @@ private static var monthNames = [
 ];
 
 function Awake() {
-    clock = GameObject.Find("Clock").GetComponent.<ClockController>();
+    clockController = GameObject.Find("Clock").GetComponent.<ClockController>();
+    lightController = GameObject.Find("Light").GetComponent.<LightController>();
 }
 
 function SetDate(month : int, day : int, dayOfWeek: int) {
@@ -47,14 +49,13 @@ function OnGUI() {
     
     if (GUILayout.Button("", "ampm switch")) {
         Config.ampm = !Config.ampm;
-        clock.UpdateDisplay();
+        clockController.UpdateDisplay();
     }
     
     GUILayout.Button("", "theme switch");
     
-    GUI.color = baseColor * (Config.shade ? 0.5 : 1.0);
     if (GUILayout.Button("", "light switch")) {
-        Config.shade = !Config.shade;
+        lightController.SwitchBrightness();
     }
     
     GUI.color = baseColor * (Config.mute ? 0.5 : 1.0);

@@ -1,22 +1,39 @@
 #pragma strict
 
+@HideInInspector
+var intensity : float;
+
 private var lightIntensity : float;
 private var screenBrightness : float;
+private var shadeFlag : boolean;
 
 function Start() {
+    intensity = 1.0;
     lightIntensity = light.intensity;
+    screenBrightness = ScreenAdjuster.GetBrightness();
+}
 
-    var currentBrightness = ScreenAdjuster.GetBrightness();
-    if (currentBrightness < 0.1) {
-        screenBrightness = 0.5;
-        Config.shade = true;
+function SwitchBrightness() {
+    if (shadeFlag) {
+        animation.Play("Light On");
     } else {
-        screenBrightness = currentBrightness;
-        Config.shade = false;
+        animation.Play("Light Off");
     }
+    shadeFlag = !shadeFlag;
 }
 
 function Update() {
-    light.intensity = lightIntensity * (Config.shade ? 0.2 : 1.0);
-    ScreenAdjuster.SetBrightness(Config.shade ? 0.0 : screenBrightness);
+    light.intensity = lightIntensity * intensity;
+    ScreenAdjuster.SetBrightness(screenBrightness * intensity);
+}
+
+function OnApplicationPause(pause : boolean) {
+    if (pause) {
+        animation.Stop();
+        ScreenAdjuster.SetBrightness(screenBrightness);
+        intensity = 1.0;
+        shadeFlag = false;
+    } else {
+        screenBrightness = ScreenAdjuster.GetBrightness();
+    }
 }

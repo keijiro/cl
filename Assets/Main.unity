@@ -985,6 +985,7 @@ GameObject:
   - 4: {fileID: 987962714}
   - 108: {fileID: 987962715}
   - 114: {fileID: 987962716}
+  - 111: {fileID: 987962717}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -1049,6 +1050,26 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 367fb361f0bcd4546b7453e1d7a26ddd, type: 1}
   m_Name: 
+  intensity: 0
+--- !u!111 &987962717
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 987962713}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: bd57c13b9f9714450ba350bc809ec38c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: bd57c13b9f9714450ba350bc809ec38c, type: 2}
+  - {fileID: 7400000, guid: a778ce0cd75894ae2acc488896984bb6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+  m_UserAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!1001 &1015767383
 Prefab:
   m_ObjectHideFlags: 0

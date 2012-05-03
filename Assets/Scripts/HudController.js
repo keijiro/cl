@@ -11,6 +11,7 @@ var imgsAudioButton : Texture2D[];
 var guiPosition : float;
 
 private var clockController : ClockController;
+private var themeController : ThemeController;
 private var lightController : LightController;
 
 private var resolution : int;
@@ -31,8 +32,9 @@ function SetDate(month : int, day : int, dayOfWeek: int) {
 }
 
 function Awake() {
-    clockController = GameObject.Find("Clock").GetComponent.<ClockController>();
-    lightController = GameObject.Find("Light").GetComponent.<LightController>();
+    clockController = FindObjectOfType(ClockController);
+    themeController = FindObjectOfType(ThemeController);
+    lightController = FindObjectOfType(LightController);
 }
 
 function Start() {
@@ -68,7 +70,9 @@ function OnGUI() {
         clockController.UpdateDisplay();
     }
     
-    GUILayout.Button(imgsThemeButton[resolution]);
+    if (GUILayout.Button(imgsThemeButton[resolution])) {
+        themeController.ChangeTheme();
+    }
     
     if (GUILayout.Button(imgsLightButton[resolution])) {
         lightController.SwitchBrightness();

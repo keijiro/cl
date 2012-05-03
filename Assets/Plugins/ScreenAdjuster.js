@@ -17,14 +17,11 @@ static function SetBrightness(level : float) {
 
 #else
 
-private static var brightness = 1.0;
-
 static function GetBrightness() {
-    return brightness;
+    return 1.0;
 }
 
 static function SetBrightness(level : float) {
-    brightness = level;
 }
 
 #endif

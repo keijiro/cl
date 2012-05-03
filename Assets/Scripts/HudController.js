@@ -6,7 +6,6 @@ var baseColor : Color;
 private var clock : ClockController;
 private var dateString : String;
 private var position : float;
-private var visible : boolean;
 
 private static var dowNames = [
     "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
@@ -26,10 +25,10 @@ function SetDate(month : int, day : int, dayOfWeek: int) {
 
 function Update() {
     if (Input.GetMouseButtonDown(0) && Input.mousePosition.y > 1.5 * 40) {
-        visible = !visible;
+        Config.hud = !Config.hud;
     }
     
-    var target = visible ? 1.0 : 0.0;
+    var target = Config.hud ? 1.0 : 0.0;
     position = target - (target - position) * Mathf.Exp(-15.0 * Time.deltaTime); 
 }
 

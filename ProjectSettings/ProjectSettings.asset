@@ -72,7 +72,7 @@ PlayerSettings:
   CreateWallpaper: 0
   StripUnusedMeshChannels: 0
   iPhoneSdkVersion: 988
-  iPhoneTargetOSVersion: 18
+  iPhoneTargetOSVersion: 7
   uIPrerenderedIcon: 1
   uIRequiresPersistentWiFi: 0
   uIStatusBarHidden: 1
@@ -83,10 +83,12 @@ PlayerSettings:
     type: 1}
   iPadPortraitSplashScreen: {fileID: 2800000, guid: 6dc53a3781ddf4dfc8cb07df0e4b93ab,
     type: 1}
-  iPadHighResPortraitSplashScreen: {fileID: 0}
+  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: a0684ee7e43ab418d9435c4451e48289,
+    type: 1}
   iPadLandscapeSplashScreen: {fileID: 2800000, guid: 958d60541af964cecbaa074edee7d7dd,
     type: 1}
-  iPadHighResLandscapeSplashScreen: {fileID: 0}
+  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: 8a3e8f13dd37443b8958e6b928832772,
+    type: 1}
   AndroidTargetDevice: 0
   AndroidTargetGraphics: 1
   AndroidSplashScreenScale: 0
@@ -100,6 +102,8 @@ PlayerSettings:
       m_Size: 128
   - m_BuildTarget: iPhone
     m_Icons:
+    - m_Icon: {fileID: 2800000, guid: 7789aa428cfdf47dc9d170912bad1c7b, type: 1}
+      m_Size: 144
     - m_Icon: {fileID: 2800000, guid: 692e400f329ca4ce9ad5ba25002dcf0e, type: 1}
       m_Size: 114
     - m_Icon: {fileID: 2800000, guid: 0af0c04e415fc43edb283b021c4df372, type: 1}

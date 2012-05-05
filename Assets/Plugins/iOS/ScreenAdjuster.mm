@@ -2,7 +2,7 @@
 
 extern "C" float _ScreenAdjusterGetBrightness() {
     UIScreen *screen = [UIScreen mainScreen];
-    if (screen && [screen respondsToSelector:@selector(brightness:)]) {
+    if (screen && [screen respondsToSelector:@selector(setBrightness:)]) {
         return [screen brightness];
     } else {
         return 1.0f;
